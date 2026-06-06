@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Navbar as BSNavbar, Container, Button } from 'react-bootstrap';
 import { useAuth } from '../context/AuthContext';
-import { getAvatar } from '../utils/api';
 
 const Navbar = () => {
   const { user, logout } = useAuth();

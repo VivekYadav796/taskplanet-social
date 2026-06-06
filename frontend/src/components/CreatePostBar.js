@@ -1,12 +1,8 @@
 import React from 'react';
-import { FiImage, FiSmile, FiEdit3 } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
-import { getAvatar } from '../utils/api';
 
 const CreatePostBar = ({ onOpenModal }) => {
   const { user } = useAuth();
-
-  const avatarUrl = user.avatar || getAvatar(user.username, '');
 
   return (
     <div className="create-post-card">

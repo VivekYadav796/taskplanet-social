@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { Button, Spinner } from 'react-bootstrap';
-import { FiImage, FiX, FiSend } from 'react-icons/fi';
+import { FiX, FiSend } from 'react-icons/fi';
 import { toast } from 'react-toastify';
 import { useAuth } from '../context/AuthContext';
-import { createPost, getAvatar } from '../utils/api';
+import { createPost } from '../utils/api';
 
 const CreatePostModal = ({ onClose, onPostCreated }) => {
   const { user } = useAuth();
@@ -35,7 +35,6 @@ const CreatePostModal = ({ onClose, onPostCreated }) => {
       toast.error('Add some text or image to post');
       return;
     }
-
     setLoading(true);
     try {
       const formData = new FormData();
@@ -60,7 +59,6 @@ const CreatePostModal = ({ onClose, onPostCreated }) => {
   return (
     <div className="tp-modal-overlay" onClick={handleOverlayClick}>
       <div className="tp-modal">
-        {/* Header */}
         <div className="tp-modal-header">
           <span className="tp-modal-title">Create Post</span>
           <button className="tp-modal-close" onClick={onClose}>
@@ -68,7 +66,6 @@ const CreatePostModal = ({ onClose, onPostCreated }) => {
           </button>
         </div>
 
-        {/* Body */}
         <div className="tp-modal-body">
           <div className="modal-post-header">
             <div className="avatar-circle">
@@ -109,7 +106,6 @@ const CreatePostModal = ({ onClose, onPostCreated }) => {
           )}
         </div>
 
-        {/* Footer */}
         <div className="modal-footer-actions">
           <div className="modal-attach-btns">
             <button
